@@ -1,16 +1,35 @@
-const modalBtn = document.querySelector('.modal__button');
-const modalBtn2 = document.querySelector('.course__button');
-const modal = document.querySelector('.modal')
+const openCourseBtn = document.querySelector('.course__button'); 
+const openTiketBtn = document.querySelector('.assembly__button');   
+const modalCourse = document.querySelector('#modal_course');
+const modalTiket = document.querySelector('#modal_tiket');
 
-modalBtn.addEventListener('click', () => {
-    modal.style.display = 'flex'
+if (openTiketBtn && modalTiket) {
+    openTiketBtn.addEventListener('click', () => {
+        modalTiket.style.display = 'flex'
 })
+}
 
-modal.addEventListener('click',(event) => {
-    const modalContent = event.target.closest('.modal__inner')
-    // console.log(modalContent);
-    if (!modalContent){
-        modal.style.display = ''
-    } 
-} )
+if (openCourseBtn && modalCourse) {
+openCourseBtn.addEventListener('click', () => {
+        modalCourse.style.display = 'flex'
+})
+}
 
+if (modalTiket) {
+    modalTiket.addEventListener('click',(event) => {
+        const modalContent = event.target.closest('.modal__inner')
+
+        if (!modalContent){
+            modalTiket.style.display = ''
+        } 
+    } )
+}
+if (modalCourse) {
+    modalCourse.addEventListener('click',(event) => {
+        const modalClos = event.target.closest('.modal__close')
+    
+        if (modalClos){
+            modalCourse.style.display = ''
+        } 
+    } )
+    }

@@ -12,7 +12,6 @@
     <script src="./js/accordeon.js" defer></script>
     <script src="./js/modal.js" defer></script>
     <script src="./js/smoothScroll.js" defer></script>
-    <script src="./js/modalZakaz.js" defer></script>
 </head>
 
 <body>
@@ -64,7 +63,7 @@
             <div class="container">
                 <div class="course__wrap">
                     <div class="course-button__wrap">
-                        <button class="button course__button">Заказать курс</button>
+                        <button class="button course__button" data-modal-target="#modal_course">Заказать курс</button>
                     </div>
                     <div class="course__counter">
                         <div class="course__counter-line">
@@ -250,7 +249,7 @@
                 <div class="assembly__wrap block-center-horis">
                     <h2 class="assembly__header">Закажите свою уникальную сборку</h2>
                     <div class="assembly__description">Мы свяжемся с вами, чтобы уточнить детали заказа</div>
-                    <button class="button assembly__button  modal__button">Оставить заявку</button>
+                    <button class="button assembly__button  modal__button" data-modal-target="#modal_tiket">Оставить заявку</button>
                     <div class="assembly__socials">
                         <div class="assembly__item block-center">
                             <img src="img/vk.svg" alt="">
@@ -270,8 +269,9 @@
         </section>
     </main>
 
-    <form action="#" class="modal block-center">
+    <form action="#" class="modal block-center" id="modal_tiket">
         <div class="modal__inner">
+
             <div class="modal__header">Заявка на сборку ПК</div>
             <div class="modal__subheader">Мы свяжемся с вами, чтобы обсудить детали заказа</div>
             <div class="modal__elements block-center-horis">
@@ -288,7 +288,26 @@
             </div>
         </div>
     </form>
+    <form action="#" class="modal block-center" id="modal_course">
+        <div class="modal__inner">
 
+            <button type="button" class="modal__close" aria-label="Закрыть">&times;</button>
+            <div class="modal__header">Заявка на КУРС</div>
+            <div class="modal__subheader">Мы свяжемся с вами, чтобы обсудить детали заказа</div>
+            <div class="modal__elements block-center-horis">
+                <div class="modal__input">
+                    <input type="text" class="modal__input">
+                </div>
+                <div class="modal__input">
+                    <input type="tel" class="modal__input">
+                </div>
+                <div class="modal__input">
+                    <input type="email" class="modal__input">
+                </div>
+                <button type="button" class="button modal__button">Отправить</button>
+            </div>
+        </div>
+    </form>
 </body>
 
 </html>
